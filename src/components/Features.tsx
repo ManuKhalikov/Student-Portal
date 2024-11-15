@@ -1,12 +1,16 @@
 import React from 'react';
 import { Wallet, BookOpen, Award } from 'lucide-react';
 import type { FeatureCard } from '../types';
+import { DynamicWidget } from '@dynamic-labs/sdk-react-core';
+
 
 const features: FeatureCard[] = [
   {
     icon: Wallet,
     title: 'Web3 Integration',
-    description: 'Seamlessly connect your wallet and manage your credentials on-chain'
+    description: 'Seamlessly connect your wallet and manage your credentials on-chain',
+    component: <DynamicWidget /> // Add DynamicWidget here
+
   },
   {
     icon: BookOpen,
@@ -33,6 +37,7 @@ const Features: React.FC = () => (
             </div>
             <h3 className="text-xl font-semibold mb-4 text-primary-navy">{feature.title}</h3>
             <p className="text-gray-600">{feature.description}</p>
+            {feature.component && <div className="mt-8">{feature.component}</div>}
           </div>
         ))}
       </div>

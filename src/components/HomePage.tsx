@@ -4,8 +4,11 @@ import Hero from './Hero';
 import Features from './Features';
 import FeaturedCourse from './FeaturedCourse';
 import Footer from './Footer';
+import { DynamicContextProvider, DynamicWidget } from '@dynamic-labs/sdk-react-core';
+import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { ChevronRight } from 'lucide-react';
 import type { Course } from '../types';
+
 
 const featuredCourses: Course[] = [
   {
@@ -33,6 +36,9 @@ const featuredCourses: Course[] = [
     imageUrl: 'https://images.unsplash.com/photo-1639322537674-e8f5f08c4d89?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   }
 ];
+
+
+
 
 const HomePage: React.FC = () => {
   const [isWalletModalOpen, setWalletModalOpen] = useState(false);

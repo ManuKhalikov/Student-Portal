@@ -1,5 +1,7 @@
 import React from 'react';
 import { Wallet, GraduationCap } from 'lucide-react';
+import { DynamicWidget } from '@dynamic-labs/sdk-react-core';
+
 
 interface NavigationProps {
   onConnectWallet: () => void;
@@ -22,13 +24,7 @@ const Navigation: React.FC<NavigationProps> = ({ onConnectWallet }) => (
           <button className="text-primary-navy hover:text-primary-coral transition-colors">
             How it Works
           </button>
-          <button 
-            onClick={onConnectWallet}
-            className="flex items-center gap-2 bg-primary-coral text-white px-6 py-2 rounded-full hover:bg-primary-navy transition-colors"
-          >
-            <Wallet className="h-4 w-4" />
-            Connect Wallet
-          </button>
+          <DynamicWidget />
         </div>
       </div>
     </div>
