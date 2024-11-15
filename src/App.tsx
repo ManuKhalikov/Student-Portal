@@ -8,9 +8,7 @@ function App() {
   return (
     <DynamicContextProvider
     settings={{
-      // Find your environment id at https://app.dynamic.xyz/dashboard/developer
-      environmentId: "bbc8819d-f94e-4f1e-8969-460a2361b06b",
-      
+      environmentId: import.meta.env.VITE_DYNAMIC_ENV_ID, // Use the environment variable
       walletConnectors: [EthereumWalletConnectors],
     }}
   >
